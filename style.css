@@ -1,0 +1,522 @@
+@charset "UTF-8";
+/*
+YUI 3.18.1 (build f7e7bcb)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+q:before,
+q:after {
+  content: '';
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  *font-size: 100%;
+  /*to enable resizing for IE*/
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 上記reset.css */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+.banner, .banner button, .banner nav {
+  display: none;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  border-bottom: 5px solid black;
+  top: 60px;
+  left: 0;
+}
+
+.header-image {
+  background-image: url(images/lessona@2x.jpg);
+  width: 100%;
+  /* 画像の高さ、横幅の指定 */
+  height: 100vh;
+  background-size: cover;
+  /* 画像を画面いっぱいに */
+  margin-bottom: 150px;
+}
+
+.header-image header {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* headerの文字真ん中に */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* header-lとmenuを等間隔で配置 */
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.header-image header .kosume {
+  font-size: 16px;
+  margin: 0 15px;
+}
+
+.header-image header section a {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 15px;
+}
+
+.header-image header .flex {
+  width: auto;
+}
+
+.header-image header .flex li a:hover {
+  padding-bottom: 5px;
+  border-bottom: 5px solid black;
+}
+
+.header-image header .drawer--right .drawer-hamburger, .header-image header .drawer--right.drawer-open .drawer-nav, .header-image header .drawer--right.drawer-open .drawer-navbar .drawer-hamburger {
+  display: none;
+}
+
+.header-image header .drawer-toggle .drawer-hamburger span, .header-image header li {
+  overflow: hidden;
+}
+
+.header-image .concept {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+}
+
+.header-image .concept h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.header-image .concept p {
+  color: #fff;
+  display: block;
+}
+
+.detail {
+  width: 1004px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.detail .txt {
+  width: 418px;
+  background-color: #dad7d7;
+  padding: 50px;
+  border: 1px solid #282a30;
+}
+
+.detail .txt p {
+  margin-bottom: 15px;
+}
+
+.detail .txt .f-weight {
+  display: block;
+  font-weight: 600;
+  margin: 30px 0 20px;
+}
+
+.detail .txt strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.detail figure {
+  margin: auto 0;
+}
+
+.item {
+  width: 1004px;
+  margin: 0 auto;
+  margin: 30px 0 20px;
+}
+
+.item h2 {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.item h2 ::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  border-bottom: 5px solid black;
+  top: 60px;
+  left: 0;
+}
+
+.item .p-weight {
+  display: block;
+  margin: 20px 0 20px;
+  font-weight: 600;
+}
+
+.item .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.item .flex .box {
+  width: 324px;
+}
+
+.item .flex .box strong {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.item .flex .box .p-weight {
+  display: block;
+  margin: 20px 0 20px;
+  font-weight: 600;
+}
+
+.item .flex .box .l-h {
+  line-height: 2;
+  display: block;
+}
+
+.item .flex .box .t-center {
+  line-height: 2;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  padding-bottom: 600px;
+}
+
+.content .wrap {
+  width: 1004px;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .wrap figure {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  top: 90px;
+  right: 0;
+}
+
+.content .wrap .price {
+  width: 500px;
+  padding: 30px 70px;
+  text-align: center;
+  background-color: rgba(245, 238, 238, 0.8);
+  z-index: 100;
+  border: 5px solid #4b1c1c;
+}
+
+.content .wrap .price h2 {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content .wrap .price h2 ::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  border-bottom: 5px solid black;
+  top: 60px;
+  left: 0;
+}
+
+.content .wrap .price th, .content .wrap .price td {
+  font-weight: 600;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px black;
+}
+
+.content .wrap .price th {
+  padding-right: 60px;
+}
+
+.content .wrap .price td {
+  padding-left: 120px;
+}
+
+.blog {
+  width: 1004px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+.blog h2 {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.blog h2 ::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  border-bottom: 5px solid black;
+  top: 60px;
+  left: 0;
+}
+
+.blog .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog .flex .box {
+  width: 324px;
+}
+
+.blog .flex .box time {
+  font-weight: 600;
+}
+
+.blog .flex .box strong {
+  font-size: 18px;
+}
+
+.access {
+  width: 1004px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+.access h2 {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.access h2 ::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  border-bottom: 5px solid black;
+  top: 60px;
+  left: 0;
+}
+
+.access .adress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+
+.access .adress p {
+  font-weight: 600;
+}
+
+.access .adress dl {
+  margin-bottom: 10px;
+}
+
+.access .adress dl .p-li {
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.access .adress .r-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.road {
+  width: 600px;
+  padding-bottom: 200px;
+  margin: 0 auto;
+}
+
+.road h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.road li {
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: black;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer strong {
+  line-height: 4.5;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+/*# sourceMappingURL=style.css.map */
